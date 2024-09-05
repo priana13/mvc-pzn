@@ -1,0 +1,21 @@
+{
+    "name": "priana/belajar-mvc",
+    "autoload": {
+        "psr-4": {
+            "Priana\\BelajarMvc\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "priana13",
+            "email": "herian.sap@gmail.com"
+        }
+    ],
+    "require": {
+        "php" : ">=8"
+    },
+    "require-dev" : 
+    {
+
+    }
+}
