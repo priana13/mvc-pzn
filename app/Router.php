@@ -19,7 +19,7 @@ class Router
         
     }
 
-    public static function run(): void
+    public static function run()
     {
 
         $path = '/';
@@ -43,7 +43,18 @@ class Router
 
             if($path == $route['path'] && $method == $route['method'] ) {
 
-                echo 'Controller: ' . $route['controller'] . ',' . 'Method: ' . $route['method'] ;
+                // var_dump($route['controller']); die();
+
+                $con  = 'Priana\BelajarMvc\Controller\HomeController';
+
+                $controller   = new $route['controller'];
+                // $controller   = new $con;
+
+                $functionName = $route['function'];
+
+                echo $controller->$functionName();
+
+                // echo 'Controller: ' . $route['controller'] . ',' . 'Method: ' . $route['method']  . ', Function: ' . $route['function'];
 
                 return;
             }

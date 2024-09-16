@@ -1,5 +1,6 @@
 <?php 
 
+use Priana\BelajarMvc\Controller\HomeController;
 use Priana\BelajarMvc\Router;
 
 // $path = '/index';
@@ -15,9 +16,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 
 
-Router::add('GET', '/' , 'HomeController' , 'index');
-Router::add('GET', '/hello' , 'HelloController' , 'hello');
-Router::add('GET', '/about' , 'AboutController' , 'about');
+Router::add('GET', '/' , HomeController::class , 'index');
+Router::add('GET', '/hello' , HomeController::class , 'hello');
+Router::add('GET', '/about' , HomeController::class , 'about');
 
 
 
