@@ -16,7 +16,7 @@ class ComposerStaticInitd8ae5e881a48bbc6934abea5738b5612
     public static $prefixDirsPsr4 = array (
         'Priana\\BelajarMvc\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 
