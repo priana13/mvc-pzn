@@ -3,7 +3,7 @@
  namespace Priana\BelajarMvc\Controller;
 
 
- class HomeController {
+ class HomeController extends Controller {
 
     public function __construct(){
 
@@ -12,7 +12,9 @@
 
     public function index(){
 
-        return "ini adalah home controller";
+        $data['nama'] = "Priana";
+
+        return $this->view('home' , $data );      
     }
 
     public function hello(){
