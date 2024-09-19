@@ -9,4 +9,12 @@ class Controller {
         require __DIR__ . '/../../app/Views/' . $name . '.blade.php';
     }
 
+    public function fullView(string $name , $data = []){
+
+        $this->view('layouts/header');
+        $this->view('layouts/navbar');
+        $this->view($name , $data );      
+        $this->view('layouts/footer');
+    }
+
 } 

@@ -12,16 +12,16 @@
 
     public function index(){
 
-        $data['nama'] = "Priana";
+        $data['nama'] = "Priana Saputra";
 
-        return $this->view('home' , $data );      
+        $this->fullView('home' , $data);
     }
 
     public function about(){
 
         $data['nama'] = "Priana";
 
-        return $this->view('about' , $data );   
+        return $this->fullView('about' , $data );   
     }
   
  }
