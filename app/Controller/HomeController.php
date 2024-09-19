@@ -17,13 +17,11 @@
         return $this->view('home' , $data );      
     }
 
-    public function hello(){
-
-        return "ini adalah home controller : Hello";
-    }
-
     public function about(){
 
-        return "ini adalah home controller : About";
+        $data['nama'] = "Priana";
+
+        return $this->view('about' , $data );   
     }
+  
  }

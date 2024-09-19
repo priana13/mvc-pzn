@@ -6,7 +6,7 @@ class Controller {
 
     public function view(string $name , $data = []){
 
-        require __DIR__ . '/../../app/View/' . $name . '.blade.php';
+        require __DIR__ . '/../../app/Views/' . $name . '.blade.php';
     }
 
 } 
