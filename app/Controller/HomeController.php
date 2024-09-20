@@ -18,7 +18,7 @@ use Priana\BelajarMvc\Models\Skill;
 
         $skills = new Skill();
 
-        var_dump( $skills->get() ); die();
+        $data['skills'] = $skills->get();
 
 
         $this->fullView('home' , $data);

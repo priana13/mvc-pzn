@@ -7,6 +7,8 @@ class Model {
 
     protected $pdo;
 
+    protected $table;
+
     public function __construct(){
 
         $host = 'localhost';  // ganti dengan host database
@@ -14,7 +16,7 @@ class Model {
         $user = 'root';  // ganti dengan username database
         $pass = 'root';  // ganti dengan password database
 
-        $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
+        $dsn = $this->getDns($host, $db);
 
         try {
             $this->pdo = new PDO($dsn, $user, $pass);
@@ -22,6 +24,35 @@ class Model {
         } catch (PDOException $e) {
             die("Koneksi database gagal: " . $e->getMessage());
         }
+
+
+        if (!isset($this->table)) {
+            $this->table = strtolower((new \ReflectionClass(static::class))->getShortName()) . "s";
+        }        
+        
+    }
+
+    public function getTableName(): void
+    {
+
+        $class_name = explode("\\" , get_class($this) ) ;
+
+        $this->table =  end( $class_name )  . "s";
+    }
+
+
+    public function get(){
+      
+
+        $stmt  = $this->pdo->query("SELECT * FROM $this->table");
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getDns($host , $db): string
+    {
+
+        return "mysql:host=$host;dbname=$db;charset=utf8mb4";
     }
 
 }
