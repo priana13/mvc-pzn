@@ -3,6 +3,7 @@
  namespace Priana\BelajarMvc\Controller;
 
 use Priana\BelajarMvc\Models\Skill;
+use ReflectionClass;
 
  class HomeController extends Controller {
 
@@ -15,6 +16,9 @@ use Priana\BelajarMvc\Models\Skill;
 
         $data['nama'] = "Priana Saputra";
 
+        $ref = new ReflectionClass( Skill::class );
+
+        // var_dump( $ref->getMethods() ); die();
 
         $skills = new Skill();
 
